@@ -4,6 +4,8 @@ import { EquipmentGatherer } from './EquipmentGatherer'
 
 export type EquipmentFormValues = {
   map: boolean
+  distanceInKm: number
+  distancePerDayInKm: number
 }
 
 export type EquipmentGathererProps = {
@@ -18,6 +20,8 @@ export const EquipmentGathererContainer = withFormik<
   mapPropsToValues: () => {
     return {
       map: false,
+      distanceInKm: 40,
+      distancePerDayInKm: 40,
     }
   },
   validate: (values, props) => {

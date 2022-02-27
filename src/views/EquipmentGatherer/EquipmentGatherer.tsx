@@ -5,16 +5,29 @@ import {
   EquipmentFormValues,
   EquipmentGathererProps,
 } from './EquipmentGathererContainer'
-import { FormGroup } from '@mui/material'
+import { Box, FormGroup, styled } from '@mui/material'
+import { FoodAndWaterChecklist } from '../FoodAndWaterChecklist/FoodAndWaterChecklist'
+
+const Container = styled(Box)(({ theme }) => ({
+  '> *:not(:first-child)': {
+    marginTop: theme.spacing(10),
+  },
+}))
 
 export const EquipmentGatherer = (
   props: FormikProps<EquipmentFormValues> & EquipmentGathererProps
 ) => {
-  const { handleSubmit } = props
+  const { handleSubmit, values } = props
+
+  const daysHiking = Math.ceil(values.distanceInKm / values.distancePerDayInKm)
+
   return (
     <form onSubmit={handleSubmit}>
       <FormGroup>
-        <WelcomeMessage {...props} />
+        <Container>
+          <WelcomeMessage {...props} />
+          <FoodAndWaterChecklist {...props} daysHiking={daysHiking} />
+        </Container>
       </FormGroup>
     </form>
   )

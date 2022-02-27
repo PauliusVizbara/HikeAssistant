@@ -8,6 +8,7 @@ const Main = styled('main')(({ theme }) => ({
 
 const Container = styled(muiContainer)(({ theme }) => ({
   marginTop: theme.spacing(5),
+  marginBottom: theme.spacing(20),
 }))
 
 export const MainContent: React.FC = (props) => {
