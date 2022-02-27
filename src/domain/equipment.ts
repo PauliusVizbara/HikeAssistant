@@ -1,9 +1,4 @@
-import {
-  CHECKLIST_LOCATION,
-  EquipmentDictionary,
-  EquipmentType,
-  EQUIPMENT_ID,
-} from './types'
+import { CHECKLIST_LOCATION, EquipmentDictionary, EQUIPMENT_ID } from './types'
 
 export const equipmentById: EquipmentDictionary = {
   [EQUIPMENT_ID.BACKPACK]: {

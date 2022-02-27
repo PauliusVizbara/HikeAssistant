@@ -1,6 +1,5 @@
 import React from 'react'
 import { FormikProps } from 'formik'
-import { EquipmentDictionary } from '../../domain/types'
 import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage'
 import {
   EquipmentFormValues,

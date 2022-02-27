@@ -3,11 +3,7 @@ import { Checkbox, Divider, FormControlLabel, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
 import { Equipment } from '../../components/Equipment/Equipment'
-import {
-  CHECKLIST_LOCATION,
-  EquipmentDictionary,
-  EquipmentType,
-} from '../../domain/types'
+import { CHECKLIST_LOCATION, EquipmentDictionary } from '../../domain/types'
 import { FormikProps } from 'formik'
 import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 
