@@ -1,6 +1,5 @@
 import { withFormik, FormikErrors } from 'formik'
-import { equipmentById } from '../../domain/equipment'
-import { EquipmentDictionary, EQUIPMENT_ID } from '../../domain/types'
+import { EquipmentDictionary } from '../../domain/types'
 import { EquipmentGatherer } from './EquipmentGatherer'
 
 export type EquipmentFormValues = {
@@ -9,6 +8,7 @@ export type EquipmentFormValues = {
 
 export type EquipmentGathererProps = {
   equipmentList: EquipmentDictionary
+  onUserInputChange: (formValues: EquipmentFormValues) => void
 }
 
 export const EquipmentGathererContainer = withFormik<
@@ -21,9 +21,8 @@ export const EquipmentGathererContainer = withFormik<
     }
   },
   validate: (values, props) => {
-    if (values.multitoolNeeded)
-      props.equipmentList[EQUIPMENT_ID.MAP] = equipmentById[EQUIPMENT_ID.MAP]
-    console.log(values, props)
+    const { onUserInputChange } = props
+    onUserInputChange(values)
     const errors: FormikErrors<EquipmentFormValues> = {}
     return errors
   },
