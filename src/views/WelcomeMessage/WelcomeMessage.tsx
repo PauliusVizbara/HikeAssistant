@@ -3,12 +3,16 @@ import { Checkbox, Divider, FormControlLabel, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
 import { Equipment } from '../../components/Equipment/Equipment'
-import { CHECKLIST_LOCATION, EquipmentType } from '../../domain/types'
+import {
+  CHECKLIST_LOCATION,
+  EquipmentDictionary,
+  EquipmentType,
+} from '../../domain/types'
 import { FormikProps } from 'formik'
 import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 
 type WelcomeMessageProps = {
-  equipmentList: EquipmentType[]
+  equipmentList: EquipmentDictionary
 } & Pick<FormikProps<EquipmentFormValues>, 'values' | 'handleChange'>
 
 export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
@@ -29,7 +33,7 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
       <SplitCardContent>
         <Typography variant="h5">Starting equipment</Typography>
         <Divider sx={{ my: 1 }} />
-        {equipmentList
+        {Object.values(equipmentList)
           .filter(
             (equipment) =>
               equipment.checklistLocation === CHECKLIST_LOCATION.WELCOME_MESSAGE

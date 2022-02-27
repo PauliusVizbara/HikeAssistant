@@ -9,9 +9,18 @@ export enum CHECKLIST_LOCATION {
 }
 
 export type EquipmentType = {
-  id: string
+  id: EQUIPMENT_ID
   name: string
   amount?: string
   measurement?: AMOUNT_MEASUREMENT
   checklistLocation: CHECKLIST_LOCATION
 }
+
+export enum EQUIPMENT_ID {
+  BACKPACK,
+  KNIFE,
+  COMPASS,
+  MAP,
+}
+
+export type EquipmentDictionary = { [key in EQUIPMENT_ID]?: EquipmentType }
