@@ -1,6 +1,6 @@
 # Hiking Assistant
 
-Implementation of TietoEvry hiring task. The full task description is [provided at the end of this README](#-Task-description)
+Implementation of TietoEvry hiring task. The full task description is [provided at the end of this README](#Task-description)
 
 # Technology stack
 
