@@ -11,7 +11,7 @@ export enum CHECKLIST_LOCATION {
 export type EquipmentType = {
   id: EQUIPMENT_ID
   name: string
-  amount?: string
+  amount?: number
   measurement?: AMOUNT_MEASUREMENT
   checklistLocation: CHECKLIST_LOCATION
 }

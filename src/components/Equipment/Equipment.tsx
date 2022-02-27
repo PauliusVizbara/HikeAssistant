@@ -1,26 +1,40 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Zoom } from '@mui/material'
 import React from 'react'
-import { EquipmentType } from '../../domain/types'
+import { AMOUNT_MEASUREMENT, EquipmentType } from '../../domain/types'
+import AddIcon from '@mui/icons-material/Add'
 
 type EquipmentProps = {
   equipment: EquipmentType
 }
 
+const getMeasurementSymbol = (measurement?: AMOUNT_MEASUREMENT) => {
+  switch (measurement) {
+    case AMOUNT_MEASUREMENT.UNITS:
+      return 'x'
+    default:
+      return 'x'
+  }
+}
+
 export const Equipment: React.FC<EquipmentProps> = (props) => {
   const {
-    equipment: { name, amount },
+    equipment: { name, amount, measurement },
   } = props
   return (
-    <Box display="flex">
-      {amount && (
-        <Typography sx={{ fontWeight: 'light' }} variant="h6" noWrap>
-          {amount}
+    <Zoom in={true}>
+      <Box display="flex" alignItems="center">
+        <AddIcon />
+        {amount && (
+          <Typography sx={{ fontWeight: 'light' }} variant="h6" noWrap>
+            {amount}
+            {getMeasurementSymbol(measurement)}
+          </Typography>
+        )}
+        <Box sx={{ m: 0.5 }} />
+        <Typography variant="h6" noWrap>
+          {name}
         </Typography>
-      )}
-      <Box sx={{ m: 0.5 }} />
-      <Typography variant="h6" noWrap>
-        {name}
-      </Typography>
-    </Box>
+      </Box>
+    </Zoom>
   )
 }

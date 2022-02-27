@@ -1,24 +1,37 @@
-import { CHECKLIST_LOCATION, EquipmentDictionary, EQUIPMENT_ID } from './types'
+import {
+  AMOUNT_MEASUREMENT,
+  CHECKLIST_LOCATION,
+  EquipmentDictionary,
+  EQUIPMENT_ID,
+} from './types'
 
 export const equipmentById: EquipmentDictionary = {
   [EQUIPMENT_ID.BACKPACK]: {
     id: EQUIPMENT_ID.BACKPACK,
-    name: 'Sturdy backpack',
+    name: 'Backpack',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.WELCOME_MESSAGE,
   },
   [EQUIPMENT_ID.KNIFE]: {
     id: EQUIPMENT_ID.KNIFE,
     name: 'Knife',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.WELCOME_MESSAGE,
   },
   [EQUIPMENT_ID.COMPASS]: {
     id: EQUIPMENT_ID.COMPASS,
     name: 'Compass',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.WELCOME_MESSAGE,
   },
   [EQUIPMENT_ID.MAP]: {
     id: EQUIPMENT_ID.MAP,
     name: 'Map',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.WELCOME_MESSAGE,
   },
 }
