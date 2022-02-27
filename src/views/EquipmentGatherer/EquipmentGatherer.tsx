@@ -1,6 +1,9 @@
 import React from 'react'
+import { FormikProps } from 'formik'
 import { EquipmentType, CHECKLIST_LOCATION } from '../../types'
 import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage'
+import { EquipmentFormValues } from './EquipmentGathererContainer'
+import { FormGroup } from '@mui/material'
 
 const equipmentList: EquipmentType[] = [
   {
@@ -20,10 +23,13 @@ const equipmentList: EquipmentType[] = [
   },
 ]
 
-export const EquipmentGatherer = () => {
+export const EquipmentGatherer = (props: FormikProps<EquipmentFormValues>) => {
+  const { handleSubmit } = props
   return (
-    <>
-      <WelcomeMessage equipmentList={equipmentList} />
-    </>
+    <form onSubmit={handleSubmit}>
+      <FormGroup>
+        <WelcomeMessage equipmentList={equipmentList} {...props} />
+      </FormGroup>
+    </form>
   )
 }

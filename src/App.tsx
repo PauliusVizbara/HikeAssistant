@@ -6,7 +6,7 @@ import { Header } from './components/Header/Header'
 import { MainContent } from './components/MainContent/MainContent'
 import { theme } from './theme'
 import { LayoutWrapper } from './components/LayoutWrapper/LayoutWrapper'
-import { EquipmentGatherer } from './views/EquipmentGatherer/EquipmentGatherer'
+import { EquipmentGathererContainer } from './views/EquipmentGatherer/EquipmentGathererContainer'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <LayoutWrapper>
         <Header />
         <MainContent>
-          <EquipmentGatherer />
+          <EquipmentGathererContainer />
         </MainContent>
         <Footer />
       </LayoutWrapper>

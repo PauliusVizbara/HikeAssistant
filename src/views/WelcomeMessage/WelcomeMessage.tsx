@@ -1,16 +1,18 @@
 import React from 'react'
-import { Divider, Typography } from '@mui/material'
+import { Checkbox, Divider, FormControlLabel, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
 import { Equipment } from '../../components/Equipment/Equipment'
 import { CHECKLIST_LOCATION, EquipmentType } from '../../types'
+import { FormikProps } from 'formik'
+import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 
 type WelcomeMessageProps = {
   equipmentList: EquipmentType[]
-}
+} & Pick<FormikProps<EquipmentFormValues>, 'values' | 'handleChange'>
 
 export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
-  const { equipmentList } = props
+  const { equipmentList, handleChange, values } = props
   return (
     <SplitCard>
       <SplitCardContent>
@@ -35,6 +37,19 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
           .map((equipment) => (
             <Equipment key={equipment.id} equipment={equipment} />
           ))}
+      </SplitCardContent>
+      <SplitCardContent>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="multitoolNeeded"
+              name="multitoolNeeded"
+              value={values.multitoolNeeded}
+              onChange={handleChange}
+            />
+          }
+          label="Label"
+        />
       </SplitCardContent>
     </SplitCard>
   )
