@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FormikProps } from 'formik'
 import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage'
 import {
@@ -9,7 +9,7 @@ import { Box, FormGroup, styled } from '@mui/material'
 import { FoodAndWaterChecklist } from '../FoodAndWaterChecklist/FoodAndWaterChecklist'
 
 const Container = styled(Box)(({ theme }) => ({
-  '> *:not(:first-child)': {
+  '> *:not(:first-of-type)': {
     marginTop: theme.spacing(10),
   },
 }))
@@ -17,9 +17,13 @@ const Container = styled(Box)(({ theme }) => ({
 export const EquipmentGatherer = (
   props: FormikProps<EquipmentFormValues> & EquipmentGathererProps
 ) => {
-  const { handleSubmit, values } = props
+  const { handleSubmit, onUserInputChange, values } = props
 
   const daysHiking = Math.ceil(values.distanceInKm / values.distancePerDayInKm)
+
+  useEffect(() => {
+    onUserInputChange(values)
+  }, [])
 
   return (
     <form onSubmit={handleSubmit}>

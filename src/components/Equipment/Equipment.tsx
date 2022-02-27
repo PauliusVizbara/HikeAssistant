@@ -11,6 +11,10 @@ const getMeasurementSymbol = (measurement?: AMOUNT_MEASUREMENT) => {
   switch (measurement) {
     case AMOUNT_MEASUREMENT.UNITS:
       return 'x'
+    case AMOUNT_MEASUREMENT.VOLUME:
+      return 'l.'
+    case AMOUNT_MEASUREMENT.WEIGHT:
+      return 'kg.'
     default:
       return 'x'
   }

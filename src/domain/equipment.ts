@@ -34,6 +34,20 @@ export const equipmentById: EquipmentDictionary = {
     measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.WELCOME_MESSAGE,
   },
+  [EQUIPMENT_ID.FOOD]: {
+    id: EQUIPMENT_ID.FOOD,
+    name: 'Food',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.WEIGHT,
+    checklistLocation: CHECKLIST_LOCATION.FOOD_AND_WATER,
+  },
+  [EQUIPMENT_ID.WATER]: {
+    id: EQUIPMENT_ID.WATER,
+    name: 'Water',
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.VOLUME,
+    checklistLocation: CHECKLIST_LOCATION.FOOD_AND_WATER,
+  },
 }
 
 export const startingEquipment: EquipmentDictionary = {

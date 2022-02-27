@@ -1,11 +1,13 @@
 export enum AMOUNT_MEASUREMENT {
   UNITS,
   VOLUME,
+  WEIGHT,
   DAYS_OF_WORTH,
 }
 
 export enum CHECKLIST_LOCATION {
   WELCOME_MESSAGE,
+  FOOD_AND_WATER,
 }
 
 export type EquipmentType = {
@@ -21,6 +23,8 @@ export enum EQUIPMENT_ID {
   KNIFE,
   COMPASS,
   MAP,
+  FOOD,
+  WATER,
 }
 
 export type EquipmentDictionary = { [key in EQUIPMENT_ID]?: EquipmentType }

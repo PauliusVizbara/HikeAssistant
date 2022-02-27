@@ -2,10 +2,11 @@ import React from 'react'
 import { Box, Slider, Stack, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
-import { EquipmentDictionary } from '../../domain/types'
+import { CHECKLIST_LOCATION, EquipmentDictionary } from '../../domain/types'
 import { FormikProps } from 'formik'
 import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 import HikingIcon from '@mui/icons-material/Hiking'
+import { Equipment } from '../../components/Equipment/Equipment'
 
 type FoodAndWaterChecklistProps = {
   equipmentList: EquipmentDictionary
@@ -63,13 +64,22 @@ export const FoodAndWaterChecklist: React.FC<FoodAndWaterChecklistProps> = (
         <Typography sx={{ fontStyle: 'italic' }} variant="body2">
           *Leave it at the average 40 kilometers per day if unsure
         </Typography>
-
         <Box sx={{ mt: 5 }} display="flex" alignItems="flex-end">
           <Typography sx={{ lineHeight: 1, mr: 0.5 }} variant="h2">
             {daysHiking}
           </Typography>
           <Typography variant="h6">days hiking in total</Typography>
         </Box>
+      </SplitCardContent>
+      <SplitCardContent>
+        {Object.values(equipmentList)
+          .filter(
+            (equipment) =>
+              equipment.checklistLocation === CHECKLIST_LOCATION.FOOD_AND_WATER
+          )
+          .map((equipment) => (
+            <Equipment key={equipment.id} equipment={equipment} />
+          ))}
       </SplitCardContent>
     </SplitCard>
   )
