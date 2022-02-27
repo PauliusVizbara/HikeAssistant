@@ -3,8 +3,14 @@ import { Divider, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
 import { Equipment } from '../../components/Equipment/Equipment'
+import { CHECKLIST_LOCATION, EquipmentType } from '../../types'
 
-export const WelcomeMessage = () => {
+type WelcomeMessageProps = {
+  equipmentList: EquipmentType[]
+}
+
+export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
+  const { equipmentList } = props
   return (
     <>
       <SplitCard>
@@ -23,9 +29,15 @@ export const WelcomeMessage = () => {
         <SplitCardContent>
           <Typography variant="h5">Starting equipment</Typography>
           <Divider sx={{ my: 1 }} />
-          <Equipment name="Sturdy backpack" />
-          <Equipment name="Knife" />
-          <Equipment name="Compass" />
+          {equipmentList
+            .filter(
+              (equipment) =>
+                equipment.checklistLocation ===
+                CHECKLIST_LOCATION.WELCOME_MESSAGE
+            )
+            .map((equipment) => (
+              <Equipment key={equipment.id} equipment={equipment} />
+            ))}
         </SplitCardContent>
       </SplitCard>
     </>

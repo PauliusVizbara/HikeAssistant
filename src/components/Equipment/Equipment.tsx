@@ -1,13 +1,15 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
+import { EquipmentType } from '../../types'
 
 type EquipmentProps = {
-  name: string
-  amount?: string
+  equipment: EquipmentType
 }
 
 export const Equipment: React.FC<EquipmentProps> = (props) => {
-  const { name, amount } = props
+  const {
+    equipment: { name, amount },
+  } = props
   return (
     <Box display="flex">
       {amount && (
