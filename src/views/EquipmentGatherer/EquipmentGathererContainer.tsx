@@ -7,6 +7,7 @@ export type EquipmentFormValues = {
   distanceInKm: number
   distancePerDayInKm: number
   isDogIncluded: boolean
+  hikeDate: Date
 }
 
 export type EquipmentGathererProps = {
@@ -24,6 +25,7 @@ export const EquipmentGathererContainer = withFormik<
       distanceInKm: 40,
       distancePerDayInKm: 40,
       isDogIncluded: false,
+      hikeDate: new Date(),
     }
   },
   validate: (values, props) => {
@@ -32,8 +34,6 @@ export const EquipmentGathererContainer = withFormik<
     const errors: FormikErrors<EquipmentFormValues> = {}
     return errors
   },
-
-  handleSubmit: (values: EquipmentFormValues) => {
-    console.log(values)
-  },
+  /* eslint-disable @typescript-eslint/no-empty-function*/
+  handleSubmit: () => {},
 })(EquipmentGatherer)

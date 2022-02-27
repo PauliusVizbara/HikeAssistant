@@ -11,6 +11,7 @@ export enum CHECKLIST_LOCATION {
   WELCOME_MESSAGE,
   FOOD_AND_WATER,
   OVERNIGHT,
+  WEATHER,
 }
 
 export type EquipmentType = {
@@ -32,6 +33,10 @@ export enum EQUIPMENT_ID {
   DOG_FOOD,
   TENT,
   SLEEPING_BAG,
+  UMBRELLA,
+  CAP,
+  WARM_CLOTHES,
+  REPELLENT,
 }
 
 export type EquipmentDictionary = { [key in EQUIPMENT_ID]?: EquipmentType }

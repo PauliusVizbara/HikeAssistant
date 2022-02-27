@@ -9,6 +9,7 @@ import { Box, FormGroup, styled } from '@mui/material'
 import { FoodAndWaterChecklist } from '../FoodAndWaterChecklist/FoodAndWaterChecklist'
 import { OvernightChecklist } from '../OvernightChecklist/OvernightChecklist'
 import { calculateDaysHiking } from '../../domain'
+import { WeatherChecklist } from '../WeatherChecklist/WeatherChecklist'
 
 const Container = styled(Box)(({ theme }) => ({
   '> *:not(:first-of-type)': {
@@ -26,8 +27,6 @@ export const EquipmentGatherer = (
     values.distancePerDayInKm
   )
 
-  console.log(daysHiking)
-
   useEffect(() => {
     onUserInputChange(values)
   }, [])
@@ -39,6 +38,7 @@ export const EquipmentGatherer = (
           <WelcomeMessage {...props} />
           <FoodAndWaterChecklist {...props} daysHiking={daysHiking} />
           {daysHiking > 1 && <OvernightChecklist {...props} />}
+          <WeatherChecklist {...props} />
         </Container>
       </FormGroup>
     </form>

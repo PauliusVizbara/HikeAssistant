@@ -72,6 +72,34 @@ export const equipmentById: EquipmentDictionary = {
     measurement: AMOUNT_MEASUREMENT.UNITS,
     checklistLocation: CHECKLIST_LOCATION.OVERNIGHT,
   },
+  [EQUIPMENT_ID.CAP]: {
+    id: EQUIPMENT_ID.CAP,
+    name: `Cap`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.WEATHER,
+  },
+  [EQUIPMENT_ID.UMBRELLA]: {
+    id: EQUIPMENT_ID.UMBRELLA,
+    name: `Umbrella`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.WEATHER,
+  },
+  [EQUIPMENT_ID.REPELLENT]: {
+    id: EQUIPMENT_ID.REPELLENT,
+    name: `Repellent`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.WEATHER,
+  },
+  [EQUIPMENT_ID.WARM_CLOTHES]: {
+    id: EQUIPMENT_ID.WARM_CLOTHES,
+    name: `Warm clothes`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.WEATHER,
+  },
 }
 
 export const startingEquipment: EquipmentDictionary = {
