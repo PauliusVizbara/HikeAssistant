@@ -1,10 +1,15 @@
 import React from 'react'
 
-import { Box, Typography } from '@mui/material'
+import { Box, styled, Typography } from '@mui/material'
+
+const Container = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  padding: theme.spacing(2),
+}))
 
 export const Footer = () => {
   return (
-    <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+    <Container component="footer">
       <Typography variant="h6" align="center" gutterBottom>
         Hike assistant
       </Typography>
@@ -13,6 +18,6 @@ export const Footer = () => {
         {new Date().getFullYear()}
         {'.'}
       </Typography>
-    </Box>
+    </Container>
   )
 }
