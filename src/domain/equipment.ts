@@ -58,6 +58,20 @@ export const equipmentById: EquipmentDictionary = {
     measurement: AMOUNT_MEASUREMENT.PERCENT,
     checklistLocation: CHECKLIST_LOCATION.FOOD_AND_WATER,
   },
+  [EQUIPMENT_ID.TENT]: {
+    id: EQUIPMENT_ID.TENT,
+    name: `Tent`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.OVERNIGHT,
+  },
+  [EQUIPMENT_ID.SLEEPING_BAG]: {
+    id: EQUIPMENT_ID.SLEEPING_BAG,
+    name: `Sleeping bag`,
+    amount: 1,
+    measurement: AMOUNT_MEASUREMENT.UNITS,
+    checklistLocation: CHECKLIST_LOCATION.OVERNIGHT,
+  },
 }
 
 export const startingEquipment: EquipmentDictionary = {

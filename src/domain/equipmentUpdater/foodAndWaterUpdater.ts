@@ -1,3 +1,4 @@
+import { calculateDaysHiking } from '..'
 import { EquipmentFormValues } from '../../views/EquipmentGatherer/EquipmentGathererContainer'
 import { equipmentById } from '../equipment'
 import { EquipmentDictionary, EquipmentType, EQUIPMENT_ID } from '../types'
@@ -7,8 +8,7 @@ const waterPerDayInLiters = 6
 
 export const foodAndWaterUpdater = (userInput: EquipmentFormValues) => {
   const { distanceInKm, distancePerDayInKm, isDogIncluded } = userInput
-  const daysHiking = Math.ceil(distanceInKm / distancePerDayInKm)
-
+  const daysHiking = calculateDaysHiking(distanceInKm, distancePerDayInKm)
   const equipment: EquipmentDictionary = {
     [EQUIPMENT_ID.FOOD]: {
       ...equipmentById[EQUIPMENT_ID.FOOD],
