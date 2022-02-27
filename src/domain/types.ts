@@ -16,6 +16,7 @@ export type EquipmentType = {
   amount?: number
   measurement?: AMOUNT_MEASUREMENT
   checklistLocation: CHECKLIST_LOCATION
+  tip?: string
 }
 
 export enum EQUIPMENT_ID {
