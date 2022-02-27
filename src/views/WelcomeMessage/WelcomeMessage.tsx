@@ -2,6 +2,7 @@ import React from 'react'
 import { Divider, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
+import { Equipment } from '../../components/Equipment/Equipment'
 
 export const WelcomeMessage = () => {
   return (
@@ -20,7 +21,11 @@ export const WelcomeMessage = () => {
         </SplitCardContent>
         <Divider orientation="vertical" flexItem></Divider>
         <SplitCardContent>
-          <Typography variant="h5">Your equipment</Typography>
+          <Typography variant="h5">Starting equipment</Typography>
+          <Divider sx={{ my: 1 }} />
+          <Equipment name="Sturdy backpack" />
+          <Equipment name="Knife" />
+          <Equipment name="Compass" />
         </SplitCardContent>
       </SplitCard>
     </>
