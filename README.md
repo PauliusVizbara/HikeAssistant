@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Hiking Assistant
+
+Implementation of TietoEvry hiring task. The full task description is [provided at the end of this README](#-Task-description)
+
+# Technology stack
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Available Scripts
 
 In the project directory, you can run:
 
@@ -10,9 +14,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
 ### `npm test`
 
@@ -22,25 +23,25 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+# Task description
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Labas,
+mano vardas Tadas. Aš turiu draugą Matą, kuris yra užkietėjęs keliautojas pėsčiomis. Viskas, ką jis pasiima į kelionę, yra jo šuo Uoga ir
+jo kuprinė. Kuprinė būna prigrūsta visokių niekniekių, todėl jam dažnai tenka keliauti tuščiu pilvu. Matas pakvietė mane į 100 km žygį
+pėsčiomis. Aš visiškai nenutuokiu, kokių daiktų ir kiek reikėtų pasiimti į šį žygį. Todėl man reikalinga Tavo pagalba. Reikėtų universalios
+programėlės/skripto ar ko nors panašaus, kad, įvedęs kilometrų skaičių ir kitą reikalingą informaciją, aš galėčiau gauti kelionei reikalingų
+daiktų ir jų kiekių sąrašą. Turbūt pats supranti, kad kelionės metu reikės maitintis, o jei kilometrų skaičius bus didelis, ir kur nors
+nakvoti. Be to, programėlė galėtų atsižvelgti ir į metų laiką – vasarą gal reikėtų nepamiršti kepurės nuo saulės, o rudenį skėčio.
+Techninių reikalavimų nėra. Visiška laisvė. Jei Tu programuoji front-end technologijomis, rezultatas gali būti web puslapis.
+Jei Tu programuoji back-end technologijomis, rezultatas gali būti endpoint'as, kuris priimtų kilometrų skaičių ir kitą reikalingą informaciją,
+o atsakymą grąžintų JSON formatu. Jei pasirinksi rašyti skriptą, pirmyn. Jei Tau patinka duomenų bazės, gali panaudoti ir jas. Svarbu tik,
+kad galėčiau įvesti pradinius duomenis ir suprasčiau atsakymą.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Aš norėčiau gauti nuorodą į Tavo sukurtos programėlės github ar bitbucket kodo repozitoriją. Bet priimsiu visokiais būdais atsiųstą kodą.
+Tik pridėk README failą, kad suprasčiau, kaip naudotis programėle.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Labai Tau ačiū,
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Tadas
