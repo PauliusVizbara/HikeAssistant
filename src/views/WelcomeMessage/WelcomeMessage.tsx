@@ -31,7 +31,7 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
         </Typography>
       </SplitCardContent>
       <SplitCardContent>
-        <Typography variant="h5">Starting equipment</Typography>
+        <Typography variant="h5">Equipment</Typography>
         <Divider sx={{ my: 1 }} />
         {Object.values(equipmentList)
           .filter(
