@@ -4,7 +4,10 @@ Implementation of TietoEvry hiring task. The full task description is [provided 
 
 # Technology stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Using [Material UI](https://mui.com/) for components
+- Using [ESLint](https://eslint.org/) for static analysis
+- Using [Prettier](https://prettier.io/) for code formatting
 
 # Available Scripts
 
