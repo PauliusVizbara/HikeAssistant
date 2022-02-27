@@ -1,14 +1,15 @@
 import { EquipmentFormValues } from '../../views/EquipmentGatherer/EquipmentGathererContainer'
 import { equipmentById } from '../equipment'
-import { EquipmentType, EQUIPMENT_ID } from '../types'
+import { EquipmentDictionary, EquipmentType, EQUIPMENT_ID } from '../types'
 
 const foodPerDayInKg = 0.9
 const waterPerDayInLiters = 6
 
 export const foodAndWaterUpdater = (userInput: EquipmentFormValues) => {
-  const { distanceInKm, distancePerDayInKm } = userInput
+  const { distanceInKm, distancePerDayInKm, isDogIncluded } = userInput
   const daysHiking = Math.ceil(distanceInKm / distancePerDayInKm)
-  return {
+
+  const equipment: EquipmentDictionary = {
     [EQUIPMENT_ID.FOOD]: {
       ...equipmentById[EQUIPMENT_ID.FOOD],
       amount: Math.round(daysHiking * foodPerDayInKg),
@@ -18,4 +19,10 @@ export const foodAndWaterUpdater = (userInput: EquipmentFormValues) => {
       amount: Math.round(daysHiking * waterPerDayInLiters),
     } as EquipmentType,
   }
+
+  if (isDogIncluded) {
+    equipment[EQUIPMENT_ID.DOG_FOOD] = equipmentById[EQUIPMENT_ID.DOG_FOOD]
+  }
+
+  return equipment
 }

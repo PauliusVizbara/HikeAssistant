@@ -6,6 +6,7 @@ export type EquipmentFormValues = {
   map: boolean
   distanceInKm: number
   distancePerDayInKm: number
+  isDogIncluded: boolean
 }
 
 export type EquipmentGathererProps = {
@@ -22,6 +23,7 @@ export const EquipmentGathererContainer = withFormik<
       map: false,
       distanceInKm: 40,
       distancePerDayInKm: 40,
+      isDogIncluded: false,
     }
   },
   validate: (values, props) => {

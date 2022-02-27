@@ -3,6 +3,8 @@ export enum AMOUNT_MEASUREMENT {
   VOLUME,
   WEIGHT,
   DAYS_OF_WORTH,
+  NONE,
+  PERCENT,
 }
 
 export enum CHECKLIST_LOCATION {
@@ -26,6 +28,7 @@ export enum EQUIPMENT_ID {
   MAP,
   FOOD,
   WATER,
+  DOG_FOOD,
 }
 
 export type EquipmentDictionary = { [key in EQUIPMENT_ID]?: EquipmentType }

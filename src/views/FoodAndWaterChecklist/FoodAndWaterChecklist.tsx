@@ -1,8 +1,19 @@
 import React from 'react'
-import { Box, Slider, Stack, Typography } from '@mui/material'
+import {
+  Box,
+  Checkbox,
+  FormControlLabel,
+  Slider,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
-import { CHECKLIST_LOCATION, EquipmentDictionary } from '../../domain/types'
+import {
+  CHECKLIST_LOCATION,
+  EquipmentDictionary,
+  EQUIPMENT_ID,
+} from '../../domain/types'
 import { FormikProps } from 'formik'
 import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 import HikingIcon from '@mui/icons-material/Hiking'
@@ -64,22 +75,51 @@ export const FoodAndWaterChecklist: React.FC<FoodAndWaterChecklistProps> = (
         <Typography sx={{ fontStyle: 'italic' }} variant="body2">
           *Leave it at the average 40 kilometers per day if unsure
         </Typography>
+      </SplitCardContent>
+      <SplitCardContent>
+        {Object.values(equipmentList)
+          .filter(
+            (equipment) =>
+              equipment.checklistLocation ===
+                CHECKLIST_LOCATION.FOOD_AND_WATER &&
+              equipment.id !== EQUIPMENT_ID.DOG_FOOD
+          )
+          .map((equipment) => (
+            <Equipment key={equipment.id} equipment={equipment} />
+          ))}
+      </SplitCardContent>
+      <SplitCardContent>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="isDogIncluded"
+              name="isDogIncluded"
+              value={values.isDogIncluded}
+              onChange={handleChange}
+            />
+          }
+          label="Are You bringing Your dog along?"
+        />
+      </SplitCardContent>
+      <SplitCardContent>
+        {Object.values(equipmentList)
+          .filter(
+            (equipment) =>
+              equipment.checklistLocation ===
+                CHECKLIST_LOCATION.FOOD_AND_WATER &&
+              equipment.id === EQUIPMENT_ID.DOG_FOOD
+          )
+          .map((equipment) => (
+            <Equipment key={equipment.id} equipment={equipment} />
+          ))}
+      </SplitCardContent>
+      <SplitCardContent>
         <Box sx={{ mt: 5 }} display="flex" alignItems="flex-end">
           <Typography sx={{ lineHeight: 1, mr: 0.5 }} variant="h2">
             {daysHiking}
           </Typography>
           <Typography variant="h6">days hiking in total</Typography>
         </Box>
-      </SplitCardContent>
-      <SplitCardContent>
-        {Object.values(equipmentList)
-          .filter(
-            (equipment) =>
-              equipment.checklistLocation === CHECKLIST_LOCATION.FOOD_AND_WATER
-          )
-          .map((equipment) => (
-            <Equipment key={equipment.id} equipment={equipment} />
-          ))}
       </SplitCardContent>
     </SplitCard>
   )

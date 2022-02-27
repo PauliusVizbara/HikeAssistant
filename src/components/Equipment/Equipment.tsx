@@ -15,6 +15,8 @@ const getMeasurementSymbol = (measurement?: AMOUNT_MEASUREMENT) => {
       return 'l.'
     case AMOUNT_MEASUREMENT.WEIGHT:
       return 'kg.'
+    case AMOUNT_MEASUREMENT.PERCENT:
+      return '%'
     default:
       return 'x'
   }

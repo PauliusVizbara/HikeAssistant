@@ -51,6 +51,13 @@ export const equipmentById: EquipmentDictionary = {
     measurement: AMOUNT_MEASUREMENT.VOLUME,
     checklistLocation: CHECKLIST_LOCATION.FOOD_AND_WATER,
   },
+  [EQUIPMENT_ID.DOG_FOOD]: {
+    id: EQUIPMENT_ID.DOG_FOOD,
+    name: `of Your dog's usual daily food intake`,
+    amount: 125,
+    measurement: AMOUNT_MEASUREMENT.PERCENT,
+    checklistLocation: CHECKLIST_LOCATION.FOOD_AND_WATER,
+  },
 }
 
 export const startingEquipment: EquipmentDictionary = {
