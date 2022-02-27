@@ -3,7 +3,7 @@ import { EquipmentDictionary } from '../../domain/types'
 import { EquipmentGatherer } from './EquipmentGatherer'
 
 export type EquipmentFormValues = {
-  multitoolNeeded: boolean
+  map: boolean
 }
 
 export type EquipmentGathererProps = {
@@ -17,7 +17,7 @@ export const EquipmentGathererContainer = withFormik<
 >({
   mapPropsToValues: () => {
     return {
-      multitoolNeeded: false,
+      map: false,
     }
   },
   validate: (values, props) => {

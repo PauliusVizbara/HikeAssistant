@@ -3,7 +3,11 @@ import { Checkbox, Divider, FormControlLabel, Typography } from '@mui/material'
 import { SplitCard } from '../../components/SplitCard/SplitCard/SplitCard'
 import { SplitCardContent } from '../../components/SplitCard/SplitCardContent/SplitCardContent'
 import { Equipment } from '../../components/Equipment/Equipment'
-import { CHECKLIST_LOCATION, EquipmentDictionary } from '../../domain/types'
+import {
+  CHECKLIST_LOCATION,
+  EquipmentDictionary,
+  EQUIPMENT_ID,
+} from '../../domain/types'
 import { FormikProps } from 'formik'
 import { EquipmentFormValues } from '../EquipmentGatherer/EquipmentGathererContainer'
 
@@ -32,7 +36,9 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
         {Object.values(equipmentList)
           .filter(
             (equipment) =>
-              equipment.checklistLocation === CHECKLIST_LOCATION.WELCOME_MESSAGE
+              equipment.checklistLocation ===
+                CHECKLIST_LOCATION.WELCOME_MESSAGE &&
+              equipment.id !== EQUIPMENT_ID.MAP
           )
           .map((equipment) => (
             <Equipment key={equipment.id} equipment={equipment} />
@@ -42,14 +48,26 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="multitoolNeeded"
-              name="multitoolNeeded"
-              value={values.multitoolNeeded}
+              id="map"
+              name="map"
+              value={values.map}
               onChange={handleChange}
             />
           }
-          label="Label"
+          label="Do you Have your hike route's map?"
         />
+      </SplitCardContent>
+      <SplitCardContent>
+        {Object.values(equipmentList)
+          .filter(
+            (equipment) =>
+              equipment.checklistLocation ===
+                CHECKLIST_LOCATION.WELCOME_MESSAGE &&
+              equipment.id === EQUIPMENT_ID.MAP
+          )
+          .map((equipment) => (
+            <Equipment key={equipment.id} equipment={equipment} />
+          ))}
       </SplitCardContent>
     </SplitCard>
   )
