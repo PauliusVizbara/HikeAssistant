@@ -8,7 +8,7 @@ const Grid = styled(muiGrid)(({ theme }) => ({
 export const SplitCardContent: React.FC = (props) => {
   const { children } = props
   return (
-    <Grid item xs>
+    <Grid item xs={1}>
       {children}
     </Grid>
   )

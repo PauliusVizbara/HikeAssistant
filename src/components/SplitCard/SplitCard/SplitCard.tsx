@@ -6,7 +6,9 @@ export const SplitCard: React.FC = (props) => {
   return (
     <Card>
       <CardContent>
-        <Grid container>{children}</Grid>
+        <Grid container columns={2}>
+          {children}
+        </Grid>
       </CardContent>
     </Card>
   )

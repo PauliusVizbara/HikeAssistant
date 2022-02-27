@@ -24,7 +24,6 @@ export const WelcomeMessage: React.FC<WelcomeMessageProps> = (props) => {
           journey to cater for additional needs.
         </Typography>
       </SplitCardContent>
-      <Divider orientation="vertical" flexItem></Divider>
       <SplitCardContent>
         <Typography variant="h5">Starting equipment</Typography>
         <Divider sx={{ my: 1 }} />
