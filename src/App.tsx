@@ -13,6 +13,7 @@ import {
 import { startingEquipment } from './domain/equipment'
 import { EquipmentDictionary } from './domain/types'
 import { updateEquipment } from './domain/equipmentUpdater'
+import { EquipmentOverview } from './views/EquipmentOverview/EquipmentOverview'
 
 function App() {
   const [equipmentList, setEquipmentList] =
@@ -32,6 +33,7 @@ function App() {
             equipmentList={equipmentList}
             onUserInputChange={onUserInputChange}
           />
+          <EquipmentOverview equipmentList={equipmentList} />
         </MainContent>
         <Footer />
       </LayoutWrapper>
