@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import { EquipmentType } from '../../types'
+import { EquipmentType } from '../../domain/types'
 
 type EquipmentProps = {
   equipment: EquipmentType

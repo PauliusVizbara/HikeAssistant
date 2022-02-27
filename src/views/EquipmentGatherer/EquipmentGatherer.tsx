@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormikProps } from 'formik'
-import { EquipmentType, CHECKLIST_LOCATION } from '../../types'
+import { EquipmentType, CHECKLIST_LOCATION } from '../../domain/types'
 import { WelcomeMessage } from '../WelcomeMessage/WelcomeMessage'
 import { EquipmentFormValues } from './EquipmentGathererContainer'
 import { FormGroup } from '@mui/material'
